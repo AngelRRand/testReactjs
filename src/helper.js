@@ -1,0 +1,33 @@
+export function calculandoTotal(cantidad, plazo){
+    let totalCantidad = 0
+    if(cantidad <= 1000){
+        totalCantidad = cantidad * .25
+    } else if(cantidad <= 5000){
+        totalCantidad = cantidad * .20
+    } else if(cantidad < 10000){
+        totalCantidad = cantidad * .15
+    } else if(cantidad > 10000){
+        totalCantidad = cantidad * .10
+    }
+
+
+    let totalPlazo = 0
+    switch(plazo){
+        case 3:
+            totalPlazo = cantidad * .05
+            break;
+        case 6:
+            totalPlazo = cantidad * .10
+            break;
+        case 12:
+            totalPlazo = cantidad * .15
+            break;
+        case 24:
+            totalPlazo = cantidad * .20
+            break;
+        default:
+            break;
+    }
+
+    return totalPlazo + totalCantidad + cantidad
+}
